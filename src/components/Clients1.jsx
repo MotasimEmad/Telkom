@@ -16,51 +16,27 @@ const Clients1 = () => {
     "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/a2b3c3709ffedce2a22a.png",
   ];
 
-  const row2 = [
-    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/6c585c33ca6c71c79bb7.png",
-    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/9dd55e54b5a28658bf4e.png",
-    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/0384060dcbf73b6a707c.png",
-    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/35e044b3354aaa0caed5.png",
-    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/f50ae7cbf6cc805bdadc.png",
-    "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/6c585c33ca6c71c79bb7.png",
-  ];
+
     
   return (
-    <div className="py-12 bg-gradient-to-r from-sky-900 to-gray-900">
+    <div className="bg-gradient-to-r from-sky-900 to-gray-900">
       <Wrapper>
-       <h1 className="text-white text-4xl">Potential Customers</h1>
-        <p className="text-white text-sm">Lorem ipsum dolor sit amet consectetur.</p>
-        <Marquee className="mt-8">
-          <MarqueeGroup>
-            {row1.map((el) => (
-              <ImageGroup>
-                <Image src={el} />
-              </ImageGroup>
-            ))}
-          </MarqueeGroup>
-          <MarqueeGroup>
-            {row1.map((el) => (
-              <ImageGroup>
-                <Image src={el} />
-              </ImageGroup>
-            ))}
-          </MarqueeGroup>
-        </Marquee>
+    
         <Marquee>
-          <MarqueeGroup2>
-            {row2.map((el) => (
+          <MarqueeGroup>
+            {row1.map((el) => (
               <ImageGroup>
                 <Image src={el} />
               </ImageGroup>
             ))}
-          </MarqueeGroup2>
-          <MarqueeGroup2>
-            {row2.map((el) => (
+          </MarqueeGroup>
+          <MarqueeGroup>
+            {row1.map((el) => (
               <ImageGroup>
                 <Image src={el} />
               </ImageGroup>
             ))}
-          </MarqueeGroup2>
+          </MarqueeGroup>
         </Marquee>
       </Wrapper>
 
@@ -157,7 +133,7 @@ const ImageGroup = styled.div`
 
 const Image = styled.img`
   object-fit: contain;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   aspect-ratio: 16/9;
 `;

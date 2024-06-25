@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="App font-ubuntu">
-     <Navbar />
+     {/* <Navbar /> */}
       <Header />
       <AboutUs />
       <MissionAndVision />
@@ -19,6 +19,7 @@ function App() {
       <Clients />
       <Services />
       <ContactUs />
+      <Footer />
     </div>
   );
 }

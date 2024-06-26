@@ -1,39 +1,29 @@
-import logo from "../logo.png";
 
 const AboutUs = () => {
     return (
-        <header class="bg-gradient-to-r from-cyan-50 to-cyan-50 text-start">
-            <div class="container flex flex-col px-6 py-4 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
-                <div class="flex flex-col items-center w-full lg:flex-row lg:w-1/2 lg:gap-4">
-                    <div class="flex justify-center order-2 mt-6 lg:mt-0 lg:space-y-3 lg:flex-col">
-                        <span class="w-3 h-3 mx-2 bg-primary rounded-full lg:mx-0 focus:outline-none"></span>
-                        <span class="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none"></span>
-                        <span class="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none"></span>
-                        <span class="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none"></span>
-                    </div>
+        <section class="container px-12 md:px-24 py-8 mx-auto lg:py-16 text-start" id="about">
+            <div class="lg:flex lg:items-center lg:-mx-4">
+                <div class="lg:w-1/2 lg:px-4">
+                    <h3 class="text-xl text-slate-700 md:text-5xl font-ubuntu font-semibold">Who we are ?</h3>
 
-                    <div class="max-w-lg lg:mx-12 lg:order-2">
-                        <h1 class="text-3xl font-semibold tracking-wide text-gray-800  lg:text-4xl uppercase">About <span class="text-primary">US</span></h1>
-                        <p class="mt-4 text-gray-600">
-                            At <span class="text-primary font-bold">Telkom</span>, we are a pioneering Information and Communications Technology
-                            (ICT) provider dedicated to delivering cutting-edge network and communication
-                            services. Founded on innovation and quality, we focus on meeting our customers'
+                    <p class="mt-6 text-gray-400 font-thin">
+                        At <span class="text-primary font-bold">Telkom</span>, we are a pioneering Information and Communications Technology
+                        (ICT) provider dedicated to delivering cutting-edge network and communication
+                        services. Founded on innovation and quality, we focus on meeting our customers'
 
-                            diverse needs with excellence and reliability. Our team of highly experienced pro-
-                            fessionals with deep expertise in ICT ensures exceptional service and builds
+                        diverse needs with excellence and reliability. Our team of highly experienced pro-
+                        fessionals with deep expertise in ICT ensures exceptional service and builds
 
-                            strong relationships with our clients.
-                        </p>
-                    </div>
+                        strong relationships with our clients.
+                    </p>
                 </div>
-
-                <div class="mt-8 lg:w-1/2 lg:px-16 lg:mt-0">
-                    <img class="h-20"
-                        src={logo}
+                <div class="mt-8 lg:w-1/2 lg:px-4 lg:mt-0">
+                    <img class="object-cover w-full rounded-xl h-96"
+                        src="https://images.unsplash.com/photo-1516131206008-dd041a9764fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
                         alt="Video thumbnail" />
                 </div>
             </div>
-        </header>
+        </section>
     );
 };
 

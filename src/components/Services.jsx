@@ -2,26 +2,22 @@ const Services = () => {
 
 
     return (
-        <div class="py-6 px-8 md:px-24 sm:py-8 lg:py-12">
+        <div class="py-6 px-8 md:px-24 sm:py-8 lg:py-12 bg-gray-100">
             <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
                 <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
                     <div class="flex flex-col">
                         <h2 class="text-2xl font-bold text-slate-700 lg:text-3xl text-start font-ubuntu">Our services</h2>
 
-                        <p class="max-w-screen-sm text-gray-400 text-start font-thin">
+                        <p class="max-w-screen-sm text-gray-600 text-start font-thin">
                             This is a section of some simple filler text,
                             also known as placeholder text. It shares some characteristics of a real written text.
                         </p>
                     </div>
 
                     <div class="hidden md:block relative">
-                        <div class="absolute -inset-5">
-                            <div
-                                class="w-full h-full max-w-sm mx-auto lg:mx-0 opacity-30 blur-lg bg-gradient-to-r from-yellow-400 via-pink-500 to-green-600">
-                            </div>
-                        </div>
+        
                         <a href="#" title=""
-                            class="relative z-10 inline-flex items-center justify-center w-full px-4 py-1 text-sm text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                            class="relative z-10 inline-flex items-center justify-center w-full px-4 py-2 text-sm text-white transition-all duration-200 bg-primary border-2 border-transparent sm:w-auto rounded-md font-pj  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
                             role="button">
                             View all services
                         </a>
@@ -29,13 +25,9 @@ const Services = () => {
                 </div>
 
                 <div class="md:hidden relative my-4">
-                        <div class="absolute -inset-5">
-                            <div
-                                class="w-full h-full max-w-sm mx-auto lg:mx-0 opacity-30 blur-lg bg-gradient-to-r from-yellow-400 via-pink-500 to-green-600">
-                            </div>
-                        </div>
+                        
                         <a href="#" title=""
-                            class="relative z-10 inline-flex items-center justify-center w-full px-4 py-2 text-sm text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                            class="relative z-10 inline-flex items-center justify-center w-full px-4 py-2 text-sm text-white transition-all duration-200 bg-primary border-2 border-transparent sm:w-auto rounded-md font-pj  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
                             role="button">
                             View all services
                         </a>

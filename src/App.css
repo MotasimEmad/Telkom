@@ -37,7 +37,6 @@
   }
 }
 
-
 .video-container {
   position: absolute;
   top: 0;
@@ -86,4 +85,28 @@ nav {
   background-attachment: fixed;
   background-position: center;
   z-index: -1;
+}
+
+@media (max-width: 767px) {
+  .relative.h-screen {
+    height: 50vh; /* Adjust height as needed */
+  }
+}
+
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Ensure it stays above other elements */
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 10px;
+  color: white;
+}
+
+.scrolled {
+  background-color: white;
+  color: black;
+  box-shadow: 0 4px 2px -2px gray; /* Optional: add shadow for better visibility */
+  margin-top: 0px
 }

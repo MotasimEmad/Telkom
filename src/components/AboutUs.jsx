@@ -5,9 +5,9 @@ const AboutUs = () => {
       <div class="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
         <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
           <div class="sm:max-w-lg text-start">
-            <h1 class="font text-3xl md:text-6xl font-bold tracking-tight text-gray-900">About us</h1>
+            <h1 class="font text-3xl md:text-6xl font-bold tracking-tight text-gray-900 font-ubuntu">About us</h1>
             <p class="mt-4 text-xl text-gray-600 font-thin">
-              At <span className="text-primary font-bold">Telkom</span>, we are a pioneering Information and Communications Technology
+              At <span className="text-primary font-bold font-ubuntu">Telkom</span>, we are a pioneering Information and Communications Technology
               (ICT) provider dedicated to delivering cutting-edge network and communication
               services. Founded on innovation and quality, we focus on meeting our customers'
               diverse needs with excellence and reliability. Our team of highly experienced professionals with deep expertise in ICT ensures exceptional service and builds

@@ -16,12 +16,12 @@ const NavBar = () => {
         <div className="hidden md:flex items-center justify-between w-full">
           <div className="flex items-center">
             <div className="flex items-center bg-white p-3 rounded-lg">
-              <img src={logo} alt="Logo" className="h-8" />
+              <Link to="/"><img src={logo} alt="Logo" className="h-8" /></Link>
             </div>
           </div>
           <div className="md:flex space-x-6 font-normal text-lg ml-6">
             <Link to="/" className="text-black hover:text-primary">Home</Link>
-            <a href="#" className="text-black hover:text-primary">Services</a>
+            <Link to="/services" className="text-primary font-semibold">Services</Link>
             <a href="#" className="text-black hover:text-primary">Contact us</a>
           </div>
           <button className="text-white rounded-md px-4 py-2 bg-primary font-semibold uppercase">Get a quote</button>
@@ -100,15 +100,12 @@ const NavBar = () => {
           </button>
           {/* Sidebar content */}
           <div className="py-8 px-4 mt-6">
-            <a href="#" className="block text-gray-800 hover:text-primary py-2">
+            <Link href="#" className="block text-gray-800 hover:text-primary py-2">
               Home
-            </a>
-            <a href="#" className="block text-gray-800 hover:text-primary py-2">
-              About us
-            </a>
-            <a href="#" className="block text-gray-800 hover:text-primary py-2">
+            </Link>
+            <Link to="/services" className="block text-primary font-semibold py-2">
               Services
-            </a>
+            </Link>
             <a href="#" className="block text-gray-800 hover:text-primary py-2">
               Contact us
             </a>

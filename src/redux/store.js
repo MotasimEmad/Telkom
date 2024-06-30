@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import servicesSlice from "./servicesSlice";
 import serviceDetailsSlice from "./serviceDetailsSlice";
 import settingSlice from "./settingSlice";
+import messagesSlice from "./messagesSlice";
 
 
 export const store = configureStore({
@@ -9,5 +10,6 @@ export const store = configureStore({
         service: servicesSlice,
         serviceDetails: serviceDetailsSlice,
         setting: settingSlice,
+        message: messagesSlice,
     }
 });

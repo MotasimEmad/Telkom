@@ -25,6 +25,8 @@ const serviceDetailsSlice = createSlice({
             .addCase(getServiceById.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.service = action.payload.data;
+
+                console.log(action.payload.data);
             })
             .addCase(getServiceById.rejected, (state, action) => {
                 state.isLoading = false;

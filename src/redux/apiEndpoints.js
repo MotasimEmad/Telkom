@@ -1,4 +1,4 @@
-const BASE_URL = 'http://192.168.1.40:8000/api/v1';
+const BASE_URL = 'https://dashboard.telkom.ae/api/v1';
 
 const endpoints = {
     // Services

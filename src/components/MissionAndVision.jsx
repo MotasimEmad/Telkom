@@ -1,6 +1,6 @@
 const MissionAndVision = () => {
     return (
-        <section class="container px-12 md:px-24 py-8 mx-auto lg:py-16">
+        <section id="our-mission" class="container px-12 md:px-24 py-8 mx-auto lg:py-16">
             <div class="grid grid-cols-1 gap-8 xl:gap-12 md:grid-cols-2">
                 <div class="p-8 space-y-3 bg-white shadow-2xl rounded-xl text-start">
                     <div className="flex items-center justify-between">

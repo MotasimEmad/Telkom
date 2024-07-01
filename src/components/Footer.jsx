@@ -1,20 +1,19 @@
+import { Link } from "react-router-dom";
 import logo from "../logo.png";
 
 const Footer = () => {
     return (
         <footer class="bg-gradient-to-r from-sky-900 to-gray-900">
-            <div class="container p-24 mx-auto">
+            <div class="container p-12 md:p-24 mx-auto">
                 <div class="flex flex-col items-center text-center">
                     <div className="flex items-center bg-white p-4 rounded-lg">
                         <img src={logo} alt="Logo" className="h-8" />
                     </div>
 
                     <div class="flex flex-wrap justify-center mt-6 -mx-4">
-                        <a href="#" class="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-primary" aria-label="Reddit"> Home </a>
+                        <Link to="/" class="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-primary" aria-label="Reddit"> Home </Link>
 
-                        <a href="#" class="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-primary" aria-label="Reddit"> About us </a>
-
-                        <a href="#" class="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-primary" aria-label="Reddit"> Services </a>
+                        <Link to="/services" class="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-primary" aria-label="Reddit"> Services </Link>
 
                         <a href="#" class="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-primary" aria-label="Reddit"> Contact us </a>
 

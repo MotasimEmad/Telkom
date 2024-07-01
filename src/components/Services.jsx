@@ -1,5 +1,15 @@
-const Services = () => {
+import { useDispatch, useSelector } from "react-redux";
+import { getTopServices } from '../redux/servicesSlice';
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
+
+const Services = () => {
+    const { isLoading, top_services } = useSelector((state) => state.service);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getTopServices());
+    }, [dispatch]);
 
     return (
         <div class="py-6 px-8 md:px-24 sm:py-8 lg:py-12 bg-gray-100">
@@ -15,68 +25,42 @@ const Services = () => {
                     </div>
 
                     <div class="hidden md:block relative">
-        
-                        <a href="#" title=""
-                            class="relative z-10 inline-flex items-center justify-center w-full px-4 py-2 text-sm text-white transition-all duration-200 bg-primary border-2 border-transparent sm:w-auto rounded-md font-pj  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+
+                        <Link to="/services"
+                            class="z-10 inline-flex items-center justify-center w-full px-4 py-2 text-sm text-white transition-all duration-200 bg-primary border-2 border-transparent sm:w-auto rounded-md font-pj  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
                             role="button">
                             View all services
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
                 <div class="md:hidden relative my-4">
-                        
-                        <a href="#" title=""
-                            class="relative z-10 inline-flex items-center justify-center w-full px-4 py-2 text-sm text-white transition-all duration-200 bg-primary border-2 border-transparent sm:w-auto rounded-md font-pj  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                            role="button">
-                            View all services
-                        </a>
-                    </div>
 
-                <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-                    <a href="#"
-                        class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-                        <img src="https://plus.unsplash.com/premium_photo-1675024226990-36dcb7252c62?q=80&w=1885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" loading="lazy" alt="Photo by Minh Pham" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                    <Link to="/services"
+                        class="z-10 inline-flex items-center justify-center w-full px-4 py-2 text-sm text-white transition-all duration-200 bg-primary border-2 border-transparent sm:w-auto rounded-md font-pj  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                        role="button">
+                        View all services
+                    </Link>
+                </div>
 
-                        <div
-                            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                        </div>
-
-                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">ICT Services</span>
-                    </a>
-
-                    <a href="#"
-                        class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-                        <img src="https://plus.unsplash.com/premium_photo-1663047651336-76612c1718af?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" loading="lazy" alt="Photo by Magicle" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-
-                        <div
-                            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                        </div>
-
-                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Call Center Solution</span>
-                    </a>
-
-                    <a href="#"
-                        class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-                        <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" loading="lazy" alt="Photo by Martin Sanchez" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-
-                        <div
-                            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                        </div>
-
-                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Software Development</span>
-                    </a>
-
-                    <a href="#"
-                        class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" loading="lazy" alt="Photo by Lorenzo Herrera" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-
-                        <div
-                            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                        </div>
-
-                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">IT Support</span>
-                    </a>
+                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+                    {top_services.map((service, index) => (
+                         <Link to={`/service/${service.id}`}
+                            key={service.id}
+                            href="#"
+                            className={`group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg ${index === 1 || index === 2 ? 'md:col-span-2 md:h-80' : 'md:h-80'
+                                }`}
+                        >
+                            <img
+                                src={service.image}
+                                loading="lazy"
+                                alt={`Photo by ${service.name}`}
+                                className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                            />
+                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
+                            <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">{service.name}</span>
+                        </Link>
+                    ))}
                 </div>
             </div>
         </div>

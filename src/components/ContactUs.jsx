@@ -1,14 +1,39 @@
-import kantaFamily from '../images/kanta.jpeg';
-
-const imageUrl = "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80";
-
-const divStyle = {
-    backgroundImage: `url(${imageUrl})`
-};
+import { useDispatch, useSelector } from 'react-redux';
+import { sendMessage } from '../redux/messagesSlice';
+import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactUs = () => {
+    const dispatch = useDispatch();
+    const [fullName, setFullName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [message, setMessage] = useState("");
+    const { isLoading, success, error } = useSelector((state) => state.message);
+
+    const handleSubmitClick = () => {
+        dispatch(sendMessage({ full_name: fullName, email: email, phone_number: phoneNumber, message: message }))
+            .unwrap()
+            .then((payload) => {
+                toast.success('Message has been send successfully.', {
+                    position: "top-right"
+                  });
+
+                  setFullName("");
+                  setEmail("");
+                  setPhoneNumber("");
+                  setMessage("");
+            })
+            .catch((error) => {
+                toast.error(error.message, {
+                    position: "top-right"
+                  });
+            })
+    };
     return (
-        <section class="text-gray-600 body-font relative text-start">
+        <section id='contact-us' class="text-gray-600 body-font relative text-start">
+             <div className="text-start"><ToastContainer /></div>
             <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
                 <div
                     class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
@@ -43,17 +68,25 @@ const ContactUs = () => {
                     </p>
                     <div class="relative mb-4">
                         <label for="name" class="leading-7 text-sm text-gray-600">Full Name</label>
-                        <input type="text" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                        <input required value={fullName} onChange={(e) => { setFullName(e.target.value) }} type="text" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                    </div>
+                    <div class="relative mb-4">
+                        <label for="name" class="leading-7 text-sm text-gray-600">Phone Number</label>
+                        <input required value={phoneNumber} onChange={(e) => { setPhoneNumber(e.target.value) }} type="text" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                     </div>
                     <div class="relative mb-4">
                         <label for="email" class="leading-7 text-sm text-gray-600">Email Address</label>
-                        <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                        <input required value={email} onChange={(e) => { setEmail(e.target.value) }} type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                     </div>
                     <div class="relative mb-4">
                         <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-                        <textarea id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                        <textarea required onChange={(e) => { setMessage(e.target.value) }} id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                     </div>
-                    <button class="text-white bg-primary border-0 py-1 px-4 focus:outline-none rounded-md text-lg uppercase">SUBMIT</button>
+                    {isLoading ?
+                        <button disabled class="text-white bg-primary border-0 py-1 px-4 focus:outline-none rounded-md text-sm uppercase">Loading ...</button>
+                        :
+                        <button onClick={handleSubmitClick} class="text-white bg-primary border-0 py-1 px-4 focus:outline-none rounded-md text-sm uppercase">SUBMIT</button>
+                    }
                 </div>
             </div>
         </section>

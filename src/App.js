@@ -1,24 +1,23 @@
-import './App.css';
-import AboutUs from './components/AboutUs';
-import Clients from './components/Clients1';
-import Header from './components/Header';
-import MissionAndVision from './components/MissionAndVision';
-import Services from './components/Services';
-import ContactUs from './components/ContactUs';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+import './App.css';
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import ServicesPage from './pages/ServicesPage';
+import ServiceDetailsPage from './pages/ServiceDetailsPage';
 <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <AboutUs />
-      <MissionAndVision />
-      <Clients />
-      <Services />
-      <ContactUs />
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/service/:id" element={<ServiceDetailsPage />} />
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }

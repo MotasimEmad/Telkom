@@ -107,6 +107,6 @@ nav {
 .scrolled {
   background-color: white;
   color: black;
-  box-shadow: 0 4px 2px -2px gray; /* Optional: add shadow for better visibility */
+  box-shadow: 0 1px 1px -1px gray; /* Optional: add shadow for better visibility */
   margin-top: 0px
 }

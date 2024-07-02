@@ -6,7 +6,7 @@ const endpoints = {
     getTopServices: `${BASE_URL}/get_top_services`,
     getServiceById: `${BASE_URL}/get_service_by_id?id=`,
     // Settings
-    getSettings: `${BASE_URL}/settnigs`,
+    getSettings: `${BASE_URL}/settings`,
     // Messages
     sendMessage: `${BASE_URL}/send_message`,
 };

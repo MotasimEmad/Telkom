@@ -22,7 +22,7 @@ const NavBar = () => {
           <div className="md:flex space-x-6 font-normal text-lg ml-6">
             <Link to="/" className="text-black hover:text-primary">Home</Link>
             <Link to="/services" className="text-primary font-semibold">Services</Link>
-            <a href="#" className="text-black hover:text-primary">Contact us</a>
+            <Link to={{ pathname: '/', hash: '#contact-us' }} href="#" className="text-black hover:text-primary">Contact us</Link>
           </div>
           <button className="text-white rounded-md px-4 py-2 bg-primary font-semibold uppercase">Get a quote</button>
         </div>
@@ -100,15 +100,15 @@ const NavBar = () => {
           </button>
           {/* Sidebar content */}
           <div className="py-8 px-4 mt-6">
-            <Link href="#" className="block text-gray-800 hover:text-primary py-2">
+            <Link to="/" className="block text-gray-800 hover:text-primary py-2">
               Home
             </Link>
             <Link to="/services" className="block text-primary font-semibold py-2">
               Services
             </Link>
-            <a href="#" className="block text-gray-800 hover:text-primary py-2">
+            <Link to={{ pathname: '/', hash: '#contact-us' }} className="block text-gray-800 hover:text-primary py-2">
               Contact us
-            </a>
+            </Link>
             <button className="text-white rounded-md px-4 py-2 bg-primary font-semibold uppercase mt-4">
               Get a quote
             </button>

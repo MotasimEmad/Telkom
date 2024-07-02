@@ -178,7 +178,7 @@ const Header = () => {
         <p className="text-white text-lg font-thin mt-12">
           Elevate Your Digital Presence with Telkom UAE – Where Innovation Meets Connectivity.
         </p>
-        <button className="mt-8 text-white rounded-md px-6 py-4 bg-primary font-semibold uppercase">get started</button>
+        <a href="#about-us" className="mt-8 text-white rounded-md px-6 py-4 bg-primary font-semibold uppercase">get started</a>
       </div>
     </div>
   );

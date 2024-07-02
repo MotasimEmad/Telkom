@@ -52,11 +52,11 @@ const ContactUs = () => {
                     <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md font-ubuntu">
                         <div class="lg:w-1/2 px-6">
                             <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
-                            <p class="mt-1">Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter</p>
+                            <p class="mt-1">Address: Dubai, Hor Al Anz East, Siddiq Al Kazem Building, Office # 201-A3</p>
                         </div>
                         <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
                             <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
-                            <a class="text-red-500 leading-relaxed">example@email.com</a>
+                            <a class="text-primary leading-relaxed">info@telkom.com</a>
                             <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">PHONE</h2>
                             <p class="leading-relaxed">123-456-7890</p>
                         </div>

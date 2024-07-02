@@ -1,0 +1,23 @@
+/* WhatsAppButton.css */
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.whatsapp-link {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366; /* WhatsApp green */
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-link:hover {
+  background-color: #128c7e; /* Darker WhatsApp green on hover */
+}

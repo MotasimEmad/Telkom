@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTopServices } from '../redux/servicesSlice';
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { TailSpin } from "react-loader-spinner";
 
 
 const Services = () => {
@@ -13,7 +14,16 @@ const Services = () => {
 
     return (
         <div class="py-6 px-8 md:px-24 sm:py-8 lg:py-12 bg-gray-100">
-            <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+            {isLoading ? <div className="flex items-center justify-center h-screen">
+                <div className="flex items-center justify-center">
+                    <TailSpin
+                        height={50}
+                        width={50}
+                        color="blue"
+                        ariaLabel="loading"
+                    />
+                </div>
+            </div> : <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
                 <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
                     <div class="flex flex-col">
                         <h2 class="text-2xl font-bold text-slate-700 lg:text-3xl text-start font-ubuntu">Our services</h2>
@@ -45,7 +55,7 @@ const Services = () => {
 
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
                     {top_services.map((service, index) => (
-                         <Link to={`/service/${service.id}`}
+                        <Link to={`/service/${service.id}`}
                             key={service.id}
                             href="#"
                             className={`group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg ${index === 1 || index === 2 ? 'md:col-span-2 md:h-80' : 'md:h-80'
@@ -62,7 +72,7 @@ const Services = () => {
                         </Link>
                     ))}
                 </div>
-            </div>
+            </div>}
         </div>
     );
 };

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from '../logo.png';
+import logo from '../loading.jpg';
 import '../App.css';
 import { Link, useLocation } from "react-router-dom";
 
@@ -11,18 +11,16 @@ const NavBar = () => {
     setIsOpen(!isOpen);
   };
     return (
-      <nav className='scrolled bg-opacity-50 w-full px-4 md:px-16'>
+      <nav className='scrolled bg-opacity-50 w-full px-4 md:px-16 fixed top-0'>
       <div className="container mx-auto flex items-center justify-between">
         <div className="hidden md:flex items-center justify-between w-full">
           <div className="flex items-center">
-            <div className="flex items-center bg-white p-3 rounded-lg">
-              <Link to="/"><img src={logo} alt="Logo" className="h-8" /></Link>
-            </div>
+          <Link to="/"><img src={logo} alt="Logo" className="h-14" /></Link>
           </div>
           <div className="md:flex space-x-6 font-normal text-lg ml-6">
-            <Link to="/" className="text-black hover:text-primary">Home</Link>
-            <Link to="/services" className="text-primary font-semibold">Services</Link>
-            <Link to={{ pathname: '/', hash: '#contact-us' }} href="#" className="text-black hover:text-primary">Contact us</Link>
+            <Link to="/" className="text-black">Home</Link>
+            <Link to="/services" className="text-gray-200 font-semibold">Services</Link>
+            <Link to={{ pathname: '/', hash: '#contact-us' }} href="#" className="text-black">Contact us</Link>
           </div>
           <button className="text-white rounded-md px-4 py-2 bg-primary font-semibold uppercase">Get a quote</button>
         </div>

@@ -1,36 +1,28 @@
 import { Link } from "react-router-dom";
-import logo from "../logo.png";
+import logo from "../loading.jpg";
 
 const Footer = () => {
     return (
-        <footer class="bg-gradient-to-r from-sky-900 to-gray-900">
-            <div class="container p-12 md:p-24 mx-auto">
-                <div class="flex flex-col items-center text-center">
-                    <div className="flex items-center bg-white p-4 rounded-lg">
-                        <img src={logo} alt="Logo" className="h-8" />
-                    </div>
+        <footer class="bg-primary ">
+            <div class="container p-6 mx-auto">
+                <div class="container flex flex-col items-center justify-between px-6 py-8 mx-auto lg:flex-row">
+                    <a href="#">
+                        <img class="w-auto h-14" src={logo} alt="" />
+                    </a>
 
-                    <div class="flex flex-wrap justify-center mt-6 -mx-4">
-                        <Link to="/" class="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-primary" aria-label="Reddit"> Home </Link>
+                    <div class="flex flex-wrap items-center justify-center gap-4 mt-6 lg:gap-6 lg:mt-0">
+                    <Link to="/" class="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-white" aria-label="Reddit"> Home </Link>
 
-                        <Link to="/services" class="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-primary" aria-label="Reddit"> Services </Link>
+<Link to="/services" class="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-white" aria-label="Reddit"> Services </Link>
 
-                        <Link
-  to={{ pathname: '/', hash: '#contact-us' }}
-  className="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-primary"
-  aria-label="Contact Us"
+<Link
+to={{ pathname: '/', hash: '#contact-us' }}
+className="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-white"
+aria-label="Contact Us"
 >Contact us</Link>
-
                     </div>
 
-                </div>
-
-                <hr class="my-6 border-gray-200 md:my-10 " />
-
-                <div class="flex flex-col items-center sm:flex-row sm:justify-between text-start">
-                    <p class="text-sm text-gray-100">© Copyright 2024. All Rights Reserved.</p>
-
-                    <div className="w-full flex justify-center md:justify-end space-x-4 px-20 mt-3">
+                    <div className="flex justify-start space-x-4 px-6 mt-3">
                         <a class="mx-1.5 text-white bg-primary p-1 rounded-full transition-colors duration-300 transform hover:text-white" href="#">
                             <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18.6668 6.67334C18.0002 7.00001 17.3468 7.13268 16.6668 7.33334C15.9195 6.49001 14.8115 6.44334 13.7468 6.84201C12.6822 7.24068 11.9848 8.21534 12.0002 9.33334V10C9.83683 10.0553 7.91016 9.07001 6.66683 7.33334C6.66683 7.33334 3.87883 12.2887 9.3335 14.6667C8.0855 15.498 6.84083 16.0587 5.3335 16C7.53883 17.202 9.94216 17.6153 12.0228 17.0113C14.4095 16.318 16.3708 14.5293 17.1235 11.85C17.348 11.0351 17.4595 10.1932 17.4548 9.34801C17.4535 9.18201 18.4615 7.50001 18.6668 6.67268V6.67334Z" />
@@ -57,6 +49,12 @@ const Footer = () => {
                             </svg>
                         </a>
                     </div>
+                </div>
+
+                <hr class="h-px my-6 bg-gray-200 border-none " />
+
+                <div>
+                    <p class="text-center text-sm text-gray-100">© Copyright 2024. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>

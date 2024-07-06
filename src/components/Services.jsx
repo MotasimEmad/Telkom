@@ -27,8 +27,13 @@ const Services = () => {
                 <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
                     <div class="flex flex-col">
                         <h2 class="text-2xl font-bold text-slate-700 lg:text-3xl text-start font-ubuntu">Our services</h2>
+                        <div className="text-start">
+                  <span class="inline-block w-28 h-1 bg-primary rounded-full"></span>
+                  <span class="inline-block w-3 h-1 ml-1 bg-primary rounded-full"></span>
+                  <span class="inline-block w-1 h-1 ml-1 bg-primary rounded-full"></span>
+                </div>
 
-                        <p class="max-w-screen-sm text-gray-600 text-start font-thin">
+                        <p class="max-w-screen-sm text-gray-600 text-start font-thin mt-4">
                             This is a section of some simple filler text,
                             also known as placeholder text. It shares some characteristics of a real written text.
                         </p>

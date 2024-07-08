@@ -118,13 +118,52 @@ nav {
   width: 100%;
   z-index: 10; /* Ensure it stays above other elements */
   transition: background-color 0.3s ease-in-out;
-  margin-top: 10px;
   color: white;
+  background-color: transparent; /* Default background */
+  display: flex;
+  align-items: center; /* Center items vertically */
 }
 
 .scrolled {
   background-color: #1a75bc;
   color: black;
   box-shadow: 0 1px 1px -1px gray; /* Optional: add shadow for better visibility */
-  margin-top: 0px
 }
+
+.nav-link {
+  position: relative;
+  color: inherit; /* Ensure it inherits the color from the parent */
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  text-decoration: none; /* Remove underline */
+}
+
+.nav-link .underline {
+  display: block;
+  max-width: 0;
+  height: 2px; /* Adjust as needed */
+  background-color: #1a75bc; /* Primary color */
+  transition: max-width 0.5s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #1a75bc; /* Primary color */
+}
+
+.nav-link:hover .underline {
+  max-width: 100%;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: #d1d5db; /* Gray color */
+}
+
+.fixed-nav.scrolled .nav-link:hover {
+  color: white; /* Change hover color when scrolled */
+}
+
+.fixed-nav.scrolled .nav-link .underline {
+  background-color: white; /* Change underline color when scrolled */
+}
+

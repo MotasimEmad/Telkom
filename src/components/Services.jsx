@@ -13,7 +13,7 @@ const Services = () => {
     }, [dispatch]);
 
     return (
-        <div class="py-6 px-8 md:px-24 sm:py-8 lg:py-12 bg-gray-100">
+        <div class="py-6 px-8 md:px-24 sm:py-8 lg:py-12 bg-gray-100 mt-12">
             {isLoading ? <div className="flex items-center justify-center h-screen">
                 <div className="flex items-center justify-center">
                     <TailSpin
@@ -28,10 +28,10 @@ const Services = () => {
                     <div class="flex flex-col">
                         <h2 class="text-2xl font-bold text-slate-700 lg:text-3xl text-start font-ubuntu">Our services</h2>
                         <div className="text-start">
-                  <span class="inline-block w-28 h-1 bg-primary rounded-full"></span>
-                  <span class="inline-block w-3 h-1 ml-1 bg-primary rounded-full"></span>
-                  <span class="inline-block w-1 h-1 ml-1 bg-primary rounded-full"></span>
-                </div>
+                            <span class="inline-block w-28 h-1 bg-primary rounded-full"></span>
+                            <span class="inline-block w-3 h-1 ml-1 bg-primary rounded-full"></span>
+                            <span class="inline-block w-1 h-1 ml-1 bg-primary rounded-full"></span>
+                        </div>
 
                         <p class="max-w-screen-sm text-gray-600 text-start font-thin mt-4">
                             This is a section of some simple filler text,

@@ -19,27 +19,27 @@ const ContactUs = () => {
             .then((payload) => {
                 toast.success('Message has been send successfully.', {
                     position: "top-right"
-                  });
+                });
 
-                  setFullName("");
-                  setEmail("");
-                  setPhoneNumber("");
-                  setMessage("");
+                setFullName("");
+                setEmail("");
+                setPhoneNumber("");
+                setMessage("");
             })
             .catch((error) => {
                 toast.error(error.message, {
                     position: "top-right"
-                  });
+                });
             })
     };
     return (
         <section id='contact-us' class="text-gray-600 body-font relative text-start">
-             <div className="text-start"><ToastContainer /></div>
+            <div className="text-start"><ToastContainer /></div>
             <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
                 <div
                     class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
-                   <iframe className="absolute inset-0" width="100%" height="100%" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no"   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462560.682844716!2d55.55717296659583!3d25.076280441863283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2z2K_YqNmK!5e0!3m2!1sar!2sae!4v1719614040110!5m2!1sar!2sae"></iframe>
-                    
+                    <iframe className="absolute inset-0" width="100%" height="100%" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462560.682844716!2d55.55717296659583!3d25.076280441863283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2z2K_YqNmK!5e0!3m2!1sar!2sae!4v1719614040110!5m2!1sar!2sae"></iframe>
+
                     <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md font-ubuntu">
                         <div class="lg:w-1/2 px-6">
                             <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
@@ -78,9 +78,13 @@ const ContactUs = () => {
                         <textarea required onChange={(e) => { setMessage(e.target.value) }} id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                     </div>
                     {isLoading ?
-                        <button disabled class="text-white bg-primary border-0 py-1 px-4 focus:outline-none rounded-md text-sm uppercase">Loading ...</button>
+                        <div className="w-full flex justify-center">
+                            <button disabled class="text-white bg-primary border-0 py-1 px-8 focus:outline-none rounded-md text-sm">Loading ...</button>
+                        </div>
                         :
-                        <button onClick={handleSubmitClick} class="text-white bg-primary border-0 py-1 px-4 focus:outline-none rounded-md text-sm uppercase">SUBMIT</button>
+                        <div className="w-full flex justify-center">
+                            <button onClick={handleSubmitClick} class="text-white bg-primary border-0 py-1 px-8 focus:outline-none rounded-md text-sm">Submit</button>
+                        </div>
                     }
                 </div>
             </div>

@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { getTopServices } from '../redux/servicesSlice';
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { TailSpin } from "react-loader-spinner";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 
 const Services = () => {
@@ -12,8 +14,44 @@ const Services = () => {
         dispatch(getTopServices());
     }, [dispatch]);
 
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 2,
+        autoplay: true,
+        speed: 3000,
+        autoplaySpeed: 3000,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
+        responsive: [
+            {
+              breakpoint: 1024, // Screen width less than 1024px
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+              }
+            },
+            {
+              breakpoint: 768, // Screen width less than 768px
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+              }
+            },
+            {
+              breakpoint: 480, // Screen width less than 480px
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              }
+            }
+          ]
+    };
+
     return (
-        <div class="py-6 px-8 md:px-24 sm:py-8 lg:py-12 bg-gray-100 mt-12">
+        <div class="py-6 sm:py-8 lg:py-16 bg-blue-50 mt-12">
             {isLoading ? <div className="flex items-center justify-center h-screen">
                 <div className="flex items-center justify-center">
                     <TailSpin
@@ -23,63 +61,79 @@ const Services = () => {
                         ariaLabel="loading"
                     />
                 </div>
-            </div> : <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-                <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
-                    <div class="flex flex-col">
-                        <h2 class="text-2xl font-bold text-slate-700 lg:text-3xl text-start font-ubuntu">Our services</h2>
-                        <div className="text-start">
+            </div> : <div class="px-4 md:px-8">
+                <div>
+                    <div class="flex flex-col justify-center">
+                        <h2 class="text-2xl font-bold text-slate-700 lg:text-3xl text-center font-ubuntu">We Specialize In</h2>
+                        <div className="text-center">
                             <span class="inline-block w-28 h-1 bg-primary rounded-full"></span>
                             <span class="inline-block w-3 h-1 ml-1 bg-primary rounded-full"></span>
                             <span class="inline-block w-1 h-1 ml-1 bg-primary rounded-full"></span>
                         </div>
 
-                        <p class="max-w-screen-sm text-gray-600 text-start font-thin mt-4">
-                            This is a section of some simple filler text,
-                            also known as placeholder text. It shares some characteristics of a real written text.
-                        </p>
-                    </div>
-
-                    <div class="hidden md:block relative">
-
-                        <Link to="/services"
-                            class="z-10 inline-flex items-center justify-center w-full px-4 py-2 text-sm text-white transition-all duration-200 bg-primary border-2 border-transparent sm:w-auto rounded-md font-pj  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                            role="button">
-                            View all services
-                        </Link>
+                      
                     </div>
                 </div>
 
-                <div class="md:hidden relative my-4">
-
-                    <Link to="/services"
-                        class="z-10 inline-flex items-center justify-center w-full px-4 py-2 text-sm text-white transition-all duration-200 bg-primary border-2 border-transparent sm:w-auto rounded-md font-pj  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                        role="button">
-                        View all services
-                    </Link>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-                    {top_services.map((service, index) => (
-                        <Link to={`/service/${service.id}`}
-                            key={service.id}
-                            href="#"
-                            className={`group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg ${index === 1 || index === 2 ? 'md:col-span-2 md:h-80' : 'md:h-80'
-                                }`}
-                        >
-                            <img
-                                src={service.image}
-                                loading="lazy"
-                                alt={`Photo by ${service.name}`}
-                                className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-                            />
-                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
-                            <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">{service.name}</span>
-                        </Link>
-                    ))}
+                <div className="mx-16 mt-6">
+                    <Slider {...settings}>
+                        {top_services.map(service => (
+                            <div key={service.id} className="w-full hover:cursor-grab">
+                                <div className="relative rounded-md overflow-hidden shadow-md md:w-64 h-80">
+                                    <img src={service.image} alt={service.name} className="h-full object-cover" />
+                                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                                        <h3 className="text-white font-bold text-lg">{service.name}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </Slider>
                 </div>
             </div>}
         </div>
     );
 };
+
+const SampleNextArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={`${className} absolute right-4 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full cursor-pointer`}
+        onClick={onClick}
+        style={{ ...style, display: "block" }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          className="w-6 h-6 text-primary"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+    );
+  };
+  
+  const SamplePrevArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={`${className} absolute left-4 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full cursor-pointer`}
+        onClick={onClick}
+        style={{ ...style, display: "block" }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          className="w-6 h-6  text-primary"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </div>
+    );
+  };
 
 export default Services;

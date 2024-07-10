@@ -4,7 +4,7 @@ const MissionAndVision = () => {
             <div class="grid grid-cols-1 gap-8 xl:gap-12 md:grid-cols-2">
                 <div class="p-8 space-y-3 bg-white shadow-md rounded-xl text-start">
                     <div className="flex items-center justify-between">
-                        <h1 class="text-2xl md:text-4xl font-semibold text-slate-700 capitalize font-ubuntu">Our mission</h1>
+                        <h1 class="text-2xl md:text-3xl font-semibold text-slate-700 capitalize font-ubuntu">Our mission</h1>
 
                         <span class=" p-2 text-primary rounded-lg shrink-0 bg-blue-200">
                             <svg width="20" height="20" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -21,7 +21,7 @@ const MissionAndVision = () => {
                 <div class="p-8 space-y-3 bg-white shadow-md rounded-xl text-start">
 
                     <div className="flex items-center justify-between">
-                        <h1 class="text-2xl md:text-4xl font-semibold text-slate-700 capitalize font-ubuntu">Our vision</h1>
+                        <h1 class="text-2xl md:text-3xl font-semibold text-slate-700 capitalize font-ubuntu">Our vision</h1>
 
 
                         <span class=" p-2 text-primary rounded-lg shrink-0 bg-blue-200">

@@ -9,6 +9,7 @@ import WhatsAppButton from './components/WhatsAppButton ';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getSettings } from './redux/settingSlice';
+import AboutPage from './pages/AboutPage';
 <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
 
 function App() {
@@ -26,13 +27,18 @@ useEffect(() => {
     <div className="App">
       {setting.is_whatsapp_enable == '1' && <WhatsAppButton />}
       <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/service/:id" element={<ServiceDetailsPage />} />
-        </Routes>
+      <div className="flex flex-col min-h-screen">
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about-us" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/service/:id" element={<ServiceDetailsPage />} />
+          </Routes>
+        </div>
         <Footer />
-      </Router>
+      </div>
+    </Router>
     </div>
   );
 }

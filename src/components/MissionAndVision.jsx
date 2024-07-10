@@ -1,10 +1,10 @@
 const MissionAndVision = () => {
     return (
-        <section id="our-mission" class="container px-12 md:px-24 py-8 mx-auto">
+        <section id="our-mission" class="container px-6 md:px-24 py-8 mx-auto">
             <div class="grid grid-cols-1 gap-8 xl:gap-12 md:grid-cols-2">
-                <div class="p-8 space-y-3 bg-white shadow-2xl rounded-xl text-start">
+                <div class="p-8 space-y-3 bg-white shadow-md rounded-xl text-start">
                     <div className="flex items-center justify-between">
-                        <h1 class="text-2xl font-semibold text-slate-700 capitalize font-ubuntu">Our mission</h1>
+                        <h1 class="text-2xl md:text-3xl font-semibold text-slate-700 capitalize font-ubuntu">Our mission</h1>
 
                         <span class=" p-2 text-primary rounded-lg shrink-0 bg-blue-200">
                             <svg width="20" height="20" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -18,10 +18,10 @@ const MissionAndVision = () => {
                     </p>
                 </div>
 
-                <div class="p-8 space-y-3 bg-white shadow-2xl rounded-xl text-start">
+                <div class="p-8 space-y-3 bg-white shadow-md rounded-xl text-start">
 
                     <div className="flex items-center justify-between">
-                        <h1 class="text-2xl font-semibold text-slate-700 capitalize font-ubuntu">Our vision</h1>
+                        <h1 class="text-2xl md:text-3xl font-semibold text-slate-700 capitalize font-ubuntu">Our vision</h1>
 
 
                         <span class=" p-2 text-primary rounded-lg shrink-0 bg-blue-200">
@@ -36,11 +36,8 @@ const MissionAndVision = () => {
                         We aspire to be a globally recognized ICT solutions provider known for our innovation, high-quality standards, and outstanding service. At Telkom, we aim to set new benchmarks in the telecommunications industry, making a lasting impact on connectivity and fostering growth in the digital era.
                     </p>
                 </div>
-
-
             </div>
         </section>
-
     );
 };
 

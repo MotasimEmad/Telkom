@@ -17,26 +17,26 @@ const Services = () => {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        // speed: 500,
         slidesToShow: 4,
         slidesToScroll: 2,
         autoplay: true,
-        speed: 3000,
-        autoplaySpeed: 3000,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
+        // speed: 3000,
+        // autoplaySpeed: 3000,
+        // nextArrow: <SampleNextArrow />,
+        // prevArrow: <SamplePrevArrow />,
         responsive: [
             {
-              breakpoint: 1024, // Screen width less than 1024px
+              breakpoint: 1930, // Screen width less than 1024px
               settings: {
-                slidesToShow: 3,
+                slidesToShow: 5,
                 slidesToScroll: 1,
               }
             },
             {
-              breakpoint: 768, // Screen width less than 768px
+              breakpoint: 1001, // Screen width less than 768px
               settings: {
-                slidesToShow: 2,
+                slidesToShow: 3,
                 slidesToScroll: 1,
               }
             },
@@ -70,19 +70,17 @@ const Services = () => {
                             <span class="inline-block w-3 h-1 ml-1 bg-primary rounded-full"></span>
                             <span class="inline-block w-1 h-1 ml-1 bg-primary rounded-full"></span>
                         </div>
-
-                      
                     </div>
                 </div>
 
                 <div className="mx-16 mt-6">
                     <Slider {...settings}>
                         {top_services.map(service => (
-                            <div key={service.id} className="w-full hover:cursor-grab">
-                                <div className="relative rounded-md overflow-hidden shadow-md md:w-64 h-80">
+                            <div key={service.id} className="px-1 w-full hover:cursor-grab">
+                                <div className="relative rounded-md overflow-hidden shadow-md h-72 xl:h-80">
                                     <img src={service.image} alt={service.name} className="h-full object-cover" />
                                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-                                        <h3 className="text-white font-bold text-lg">{service.name}</h3>
+                                        <h3 className="text-white font-bold text-md">{service.name}</h3>
                                     </div>
                                 </div>
                             </div>

@@ -1,86 +1,82 @@
-import { useState } from "react";
-import logo from '../loading.jpg';
+import React, { useEffect, useState } from 'react';
+import logo2 from '../logo2.png';
+import { Link, useLocation } from 'react-router-dom';
 import '../App.css';
-import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const [isContactUsInView, setIsContactUsInView] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const serviceIdPattern = /^\/service\/[0-9a-f-]+$/;
+      const shouldScroll = window.scrollY > 50 || location.pathname === '/about-us' || location.pathname === '/services' || serviceIdPattern.test(location.pathname);
+      setIsScrolled(shouldScroll);
+
+      const contactUsSection = document.getElementById('contact-us');
+      if (contactUsSection) {
+        const rect = contactUsSection.getBoundingClientRect();
+        const inView = rect.top <= window.innerHeight && rect.top >= 0;
+        setIsContactUsInView(inView);
+      }
+    };
+
+    handleScroll(); // Set the initial state based on the current location and scroll position
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [location.pathname]);
+
     return (
-      <nav className='scrolled bg-opacity-50 w-full px-4 md:px-16 fixed top-0'>
-      <div className="container mx-auto flex items-center justify-between">
+      <nav className={`px-16 h-12 md:h-28 fixed-nav ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container mx-auto flex items-center h-full">
         <div className="hidden md:flex items-center justify-between w-full">
           <div className="flex items-center">
-          <Link to="/"><img src={logo} alt="Logo" className="h-14" /></Link>
+            <img src={logo2} alt="Logo" className="h-20 rounded-md" />
           </div>
           <div className="md:flex space-x-6 font-normal text-lg ml-6">
-            <Link to="/" className="text-black">Home</Link>
-            <Link to="/services" className="text-gray-200 font-semibold">Services</Link>
-            <Link to={{ pathname: '/', hash: '#contact-us' }} href="#" className="text-black">Contact us</Link>
+            <Link to="/" className={`nav-link ${location.pathname === '/' && !isContactUsInView ? 'active' : ''}`}>
+              Home
+              <span className="underline"></span>
+            </Link>
+            <Link to="/about-us" className={`nav-link ${location.pathname === '/about-us' && !isContactUsInView ? 'active' : ''}`}>
+              About us
+              <span className="underline"></span>
+            </Link>
+            <Link to="/services" className={`nav-link ${location.pathname === '/services' || '/service' ? 'active' : ''}`}>
+              Services
+              <span className="underline"></span>
+            </Link>
+            <a href="#contact-us" className={`nav-link ${isContactUsInView ? 'active' : ''}`}>
+              Contact us
+              <span className="underline"></span>
+            </a>
           </div>
-          <button className="text-white rounded-md px-4 py-2 bg-primary font-semibold uppercase">Get a quote</button>
         </div>
+      </div>
 
-        <div className="flex md:hidden items-center">
-            <div className="flex items-center bg-white p-3 rounded-lg">
-              <img src={logo} alt="Logo" className="h-6" />
-            </div>
-          </div>
-        {/* Menu icon for smaller screens */}
-        <div className="md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-primary hover:text-primary focus:outline-none"
-          >
-            {/* Icon for menu */}
-            {isOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              </svg>
-            )}
-          </button>
+      <div className="flex items-center justify-between px-6">
+      <div className="flex md:hidden items-center">
+        <div className="flex items-center">
+          <img src={logo2} alt="Logo" className="h-10" />
         </div>
+      </div>
 
-        {/* Sidebar for smaller screens */}
-        <div
-          className={`text-start w-2/3 md:hidden fixed inset-y-0 right-0 z-50 bg-white shadow-lg transform transition-transform ease-in-out duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'
-            }`}
+
+      <div className="md:hidden">
+        <button
+          onClick={toggleMenu}
+          className="text-primary hover:text-primary focus:outline-none"
         >
-          {/* Close button inside sidebar */}
-          <button
-            onClick={toggleMenu}
-            className="absolute top-0 left-0 m-4 text-gray-600 hover:text-gray-800 focus:outline-none"
-          >
+          {isOpen ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -95,24 +91,25 @@ const NavBar = () => {
                 d="M6 18L18 6M6 6l12 12"
               />
             </svg>
-          </button>
-          {/* Sidebar content */}
-          <div className="py-8 px-4 mt-6">
-            <Link to="/" className="block text-gray-800 hover:text-primary py-2">
-              Home
-            </Link>
-            <Link to="/services" className="block text-primary font-semibold py-2">
-              Services
-            </Link>
-            <Link to={{ pathname: '/', hash: '#contact-us' }} className="block text-gray-800 hover:text-primary py-2">
-              Contact us
-            </Link>
-            <button className="text-white rounded-md px-4 py-2 bg-primary font-semibold uppercase mt-4">
-              Get a quote
-            </button>
-          </div>
-        </div>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          )}
+        </button>
       </div>
+    </div>
     </nav>
     );
 };

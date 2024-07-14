@@ -10,14 +10,14 @@ const AboutPage = () => {
       <NavBar />
 
       <section
-        className="mt-12 h-28 flex items-center justify-start px-8 bg-gradient-to-r from-sky-900 to-gray-900"
+        className="mt-12 md:mt-28 h-28 flex items-center justify-start px-8 bg-gradient-to-r from-sky-900 to-gray-900"
       >
         <div className="flex flex-col">
           <div className="text-white text-2xl font-ubuntu font-bold">About</div>
         </div>
       </section>
 
-      <section className="flex gap-2 py-4 px-8">
+      <section className="flex flex-col md:flex-row gap-2 py-4 px-8">
         <div className="w-full lg:w-1/2">
           <p class="block mt-4 text-gray-500 text-start font-thin text-md">
             At <span className="font-bold text-primary">Telkom</span>, we are a pioneering Information and Communications Technology (ICT) provider dedicated to delivering cutting-edge network and communication services. Founded on innovation and quality, we focus on meeting our customers' diverse needs with excellence and reliability. Our team of highly experienced professionals with deep expertise in ICT ensures exceptional service and builds strong relationships with our clients.
@@ -33,10 +33,10 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="w-full mt-4">
-        <h1 className="font-semibold text-3xl text-gray-700">Staff Connect: Expert IT Recruitment For A Thriving Dubai Business</h1>
+      <section className="w-full mt-4 px-8 md:px-0">
+        <h1 className="font-semibold text-xl md:text-3xl text-gray-700">Staff Connect: Expert IT Recruitment For A Thriving Dubai Business</h1>
 
-        <p className="mt-4 text-start px-16 font-thin">We help employers search, recruit, develop, and hire top talent. We provide solutions that are local, global, strategic, and effective. We are delighted to have as our clients several of the most reputable businesses and decision-makers from the private and public industries in the MENA region.
+        <p className="mt-4 text-start md:px-16 font-thin text-gray-500">We help employers search, recruit, develop, and hire top talent. We provide solutions that are local, global, strategic, and effective. We are delighted to have as our clients several of the most reputable businesses and decision-makers from the private and public industries in the MENA region.
 
           Being among the top employment agency in UAE, we understand the importance to have an expertly trained and competent team of employees. Our multi-cultural, dedicated team of highly-experienced recruitment experts are available around all hours to assist with your needs. Our consultants are able to find how to establish, manage and maintain business relationships to ensure that our clients’ businesses grow profitably.
 

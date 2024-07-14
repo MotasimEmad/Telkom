@@ -34,7 +34,7 @@ const ServicesPage = () => {
             ariaLabel="loading"
           />
         </div>
-      </div> : <div className="grid grid-cols-2 gap-4 mt-8 md:mt-16 md:grid-cols-3 xl:grid-cols-4 text-start px-12 py-4">
+      </div> : <div className="grid grid-cols-2 gap-4 mt-12 md:mt-32 md:grid-cols-3 xl:grid-cols-4 text-start px-4 md:px-12 py-4">
         {servicesList}
       </div>}
     </section>

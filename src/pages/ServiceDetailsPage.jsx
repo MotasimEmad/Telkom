@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { formatDate } from "../components/DateUtils";
 import NavBar from "../components/NavBar";
 import Loading from "../components/Loading";
+import SimpleContactUs from "../components/SimpleContactUs";
 
 const ServiceDetailsPage = () => {
   const { id } = useParams();
@@ -25,7 +26,7 @@ const ServiceDetailsPage = () => {
         <div className="font-sans">
           <NavBar />
           <section
-            className="h-72 flex items-center justify-center bg-gradient-to-r from-sky-900 to-gray-900"
+            className="mt-12 md:mt-28 h-72 flex items-center justify-center bg-gradient-to-r from-sky-900 to-gray-900"
           >
             <div className="flex flex-col">
               <div className="text-white text-2xl font-ubuntu font-bold">{service.name}</div>
@@ -78,6 +79,8 @@ const ServiceDetailsPage = () => {
               </div>
             </div>
           </div>
+
+          <SimpleContactUs />
         </div>
       }
     </section>

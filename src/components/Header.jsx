@@ -12,10 +12,6 @@ const Header = () => {
 
       <NavBar />
 
-      
-
-
-
       <div className="relative flex flex-col items-center md:justify-center h-full px-20">
         <h1 className="text-white text-4xl md:text-6xl font-bold mt-32 md:mt-20">
           <span className="relative whitespace-nowrap text-primary">

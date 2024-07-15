@@ -3,7 +3,6 @@ const SimpleContactUs = () => {
     const backgroundStyle = {
         backgroundImage: 'url(https://www.staffconnect.ae/wp-content/uploads/2021/10/web-pattern.png)',
         backgroundPosition: 'center',
- 
       };
     return (
         <section className="bg-orange-500" style={backgroundStyle}>

@@ -11,15 +11,15 @@ const Footer = () => {
                     </a>
 
                     <div class="flex flex-wrap items-center justify-center gap-4 mt-6 lg:gap-6 lg:mt-0">
-                    <Link to="/" class="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-white" aria-label="Reddit"> Home </Link>
+                        <Link to="/" class="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-white" aria-label="Reddit"> Home </Link>
 
-<Link to="/services" class="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-white" aria-label="Reddit"> Services </Link>
+                        <Link to="/services" class="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-white" aria-label="Reddit"> Services </Link>
 
-<Link
-to={{ pathname: '/', hash: '#contact-us' }}
-className="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-white"
-aria-label="Contact Us"
->Contact us</Link>
+                        <Link
+                            to={{ pathname: '/', hash: '#contact-us' }}
+                            className="mx-4 text-sm text-gray-100 transition-colors duration-300 hover:text-white"
+                            aria-label="Contact Us"
+                        >Contact us</Link>
                     </div>
 
                     <div className="flex justify-start space-x-4 px-6 mt-3">

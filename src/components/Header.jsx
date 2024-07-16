@@ -6,10 +6,10 @@ const Header = () => {
 
   return (
     <div className="relative h-screen lg:h-[32rem] xl:h-[48rem] overflow-hidden bg-header-section">
-      <div className="video-container">
-        <div className="overlay"></div>
-      </div>
-
+       <div className="bg-slider absolute top-0 left-0 right-0 bottom-0 z-0"></div>
+       <div className="overlay absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50 z-10"></div>
+       <div className="overlay-gradient"></div>
+       
       <NavBar />
 
       <div className="relative flex flex-col items-center md:justify-center h-full px-20">

@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import logo2 from '../logo2.png';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../App.css';
 import { getServices } from '../redux/servicesSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 
+const scrollToContactUs = () => {
+  // Scroll to the "contact-us" section
+  const contactUsSection = document.getElementById('contact-us');
+  if (contactUsSection) {
+    contactUsSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 const NavBar = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -19,7 +28,7 @@ const NavBar = () => {
   }, [dispatch]);
 
   const servicesList = services.map((service) => (
-    <Link to={`/service/${service.id}`} className="text-start text-sm block px-4 py-2 text-gray-700 hover:text-orange-500">
+    <Link to={`/service/${service.id}`} className="text-start text-sm block px-4 py-2 text-gray-700 hover:bg-orange-500 hover:text-gray-100 border-b-2 border-gray-100">
       {service.name}
     </Link>
   ));
@@ -82,6 +91,16 @@ const NavBar = () => {
     };
   }, [location.pathname]);
 
+  const handleContactUsClick = (e) => {
+    e.preventDefault();
+    if (window.location.pathname === '/') {
+      scrollToContactUs();
+    } else {
+      navigate('/', { replace: true });
+      setTimeout(scrollToContactUs, 100);
+    }
+  };
+
   return (
     <>
       <nav className={`hidden md:block px-16 h-12 md:h-28 fixed-nav ${isScrolled ? 'scrolled' : ''}`}>
@@ -110,7 +129,7 @@ const NavBar = () => {
                 </Link>
                 {isDropdownOpen && <DropdownMenu setIsDropdownOpen={setIsDropdownOpen} />}
               </div>
-              <a href="#contact-us" className={`nav-link ${isContactUsInView ? 'active' : ''}`}>
+              <a href="/" onClick={handleContactUsClick} className={`nav-link ${isContactUsInView ? 'active' : ''}`}>
                 Contact us
                 <span className="underline"></span>
               </a>
@@ -197,7 +216,7 @@ const NavBar = () => {
                 </Link>
                 {isDropdownOpen && <DropdownMenu setIsDropdownOpen={setIsDropdownOpen} />}
               </div>
-              <a href="#contact-us" className={`nav-link ${location.hash === '#contact-us' ? 'active' : ''}`}>
+              <a href="/" onClick={handleContactUsClick} className={`nav-link ${location.hash === '#contact-us' ? 'active' : ''}`}>
                 Contact us
                 <span className="underline"></span>
               </a>

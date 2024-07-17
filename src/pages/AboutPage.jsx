@@ -10,7 +10,7 @@ const AboutPage = () => {
       <NavBar />
 
       <section
-        className="mt-12 md:mt-28 h-28 flex items-center justify-start px-8 bg-gradient-to-r from-sky-900 to-gray-900"
+        className="mt-12 md:mt-28 h-28 flex items-center justify-start px-8 bg-orange-500"
       >
         <div className="flex flex-col">
           <div className="text-white text-2xl font-ubuntu font-bold">About</div>

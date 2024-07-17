@@ -214,7 +214,9 @@ const NavBar = () => {
                   Services
                   <span className="underline"></span>
                 </Link>
-                {isDropdownOpen && <DropdownMenu setIsDropdownOpen={setIsDropdownOpen} />}
+               <div className='hidden md:block'>
+               {isDropdownOpen && <DropdownMenu setIsDropdownOpen={setIsDropdownOpen} />}
+               </div>
               </div>
               <a href="/" onClick={handleContactUsClick} className={`nav-link ${location.hash === '#contact-us' ? 'active' : ''}`}>
                 Contact us

@@ -26,7 +26,7 @@ const ServiceDetailsPage = () => {
         <div className="font-sans">
           <NavBar />
           <section
-            className="mt-12 md:mt-28 h-72 flex items-center justify-center bg-gradient-to-r from-sky-900 to-gray-900"
+            className="mt-12 md:mt-28 h-72 flex items-center justify-center bg-orange-500"
           >
             <div className="flex flex-col">
               <div className="text-white text-2xl font-ubuntu font-bold">{service.name}</div>

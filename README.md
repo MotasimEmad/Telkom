@@ -1,6 +1,4 @@
-
-
-https://chatgpt.com/share/44a358bf-3a8f-4462-a9c3-c841e217922b
+https://chatgpt.com/share/27c06980-0d0b-41d1-a61c-37c88b07cf61
 
 # Getting Started with Create React App
 

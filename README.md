@@ -1,5 +1,3 @@
-https://chatgpt.com/share/03a78d5d-cf13-483d-9232-683950e65231
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
